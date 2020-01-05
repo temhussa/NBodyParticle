@@ -10,9 +10,9 @@ public class Main
 		double TimeInterval = 86400;
 		double RadialMagnitude2 = 0;
 		double RadialMagnitude3 = 0;
-		// Used to set the length of all the arrays containing the initial
-		// conditions for each of the bodies in the system. So just by changing
-		// this you can increase the number of bodies.
+		//Used to set the length of all the arrays containing the initial
+		//conditions for each of the bodies in the system. So just by changing
+		//this you can increase the number of bodies.
 		int ArrayIndex = 7;
 
 		//Creates arrays representing the initial conditions of the bodies in the
@@ -88,7 +88,7 @@ public class Main
 			//would change in turn affecting the positions.
 			for (int a = 0; a < Mass.length; a++)
 			{
-        //Calculates position, momentum and energy conseravtion according to the
+                                //Calculates position, momentum and energy conseravtion according to the
 				//users choice of algorithm.
 				if (UserChoice == 1)
 				{
@@ -104,24 +104,10 @@ public class Main
 					Planets[a].getMomentum();
 				}
 
-				  if (Planets[4].getPosition().magnitude() < 0)
-					{
-						//RadialMagnitude3 = -Planets[4].getPosition().magnitude();
-					}
-
-					else
-					{
-						//RadialMagnitude3 = Planets[4].getPosition().magnitude();
-					}
-
-				  if (RadialMagnitude3 > RadialMagnitude2)
-					{
-						//RadialMagnitude2 = RadialMagnitude3;
-					}
+				 
 					File.writeToFile(PlanetNames[a], Planets[a], filewriter);
 					//Writes data from simulation to file.
 			}
-			//System.out.println(RadialMagnitude2);
 			filewriter.write(System.getProperty("line.separator"));
 		}
 		filewriter.close();
